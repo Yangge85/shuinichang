@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>水泥厂的孩子们</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        ul li a {
+            color: #000;
+        }
+
+        ul li a:hover {
+            color: #d2568c;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            flex-grow: 1;
+        }
+
+        footer {
+            position: fixed;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        p {
+            margin-bottom: 10px;
+
+        }
+
+        img {
+            width: 100%;
+            /* 让图片宽度占满父容器 */
+        }
+
+        @media (max-width: 600px) {
+            img {
+                width: 100%;
+                /* 在小屏幕上，将图片宽度减小为80% */
+            }
+        }
+
+        #image-container div p:last-child {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="font-size: 30px;">水泥厂的孩子们</h1>
+        <h1></h1>
+        <p>前端编辑：@阳 </p>
+
+        <div id="countdown"></div>
+    </header>
+
+
+    <section>
+
+        <h3>序言</h3>
+        <p>在衡水市火车站北面，土产日杂批发公司旁边活跃着一群调皮捣蛋的水泥厂孩子，他们的经历很不寻常。</p>
+        <p>人一旦开始怀念过去，就证明他开始老了，这里有一些老照片,记录着那个年代的我们！</p>
+        <div ><h3>保家卫国</h3><img src="https://p3-sign.toutiaoimg.com/tos-cn-i-6w9my0ksvp/6ea3cd890a0d4f0185631eb26f6b7d47~tplv-tt-origin-asy2:5aS05p2hQOWygee-juawuOaBkg==.image?_iz=58558&from=article.pc_detail&x-expires=1698335456&x-signature=Le3lrgQL7ViTsZN5S0vSCG3jh2Q%3D" alt="">保家卫国血性男儿（把图片上传到头条，复制地址过来加载）</div>
+        <div id="image-container"></div>
+
+    </section>
+
+    <footer>
+        &copy; 1990-2023 <br>
+        欢迎投稿将高清照片视频发到 <br>
+        29521510@qq.com 素材太少踊跃提供<br>
+
+    </footer>
+
+    <script>
+
+        // 创建一个函数以添加图片、标题和简介
+        function addImage(title, imageUrl, description) {
+            var imageContainer = document.getElementById('image-container');
+
+            var imageDiv = document.createElement('div');
+            var imageTitle = document.createElement('h3');
+            var image = document.createElement('img');
+            var imageDescription = document.createElement('p');
+
+            imageTitle.innerText = title;
+            image.setAttribute('src', imageUrl);
+            image.setAttribute('alt', '图片描述');
+            imageDescription.innerText = description;
+
+            imageDiv.appendChild(imageTitle);
+            imageDiv.appendChild(image);
+            imageDiv.appendChild(imageDescription);
+
+            imageContainer.appendChild(imageDiv);
+        }
+        // 创建一个函数以添加视频、标题和简介
+        function addVideo(title, videoUrl, description) {
+            var videoContainer = document.getElementById('image-container');
+
+            var videoDiv = document.createElement('div');
+            var videoTitle = document.createElement('h3');
+            var video = document.createElement('video');
+            var videoDescription = document.createElement('p');
+
+            // 设置视频属性
+            video.setAttribute('controls', true); // 添加视频控件
+            video.setAttribute('width', '100%');  // 设置视频宽度
+
+            videoTitle.innerText = title;
+            video.setAttribute('src', videoUrl);
+            video.setAttribute('alt', '视频描述');
+            videoDescription.innerText = description;
+
+            videoDiv.appendChild(videoTitle);
+            videoDiv.appendChild(video);
+            videoDiv.appendChild(videoDescription);
+
+            videoContainer.appendChild(videoDiv);
+        }
+
+        // 目标日期，即1991年9月1日
+        var startDate = new Date("1991-09-01T00:00:00");
+        // 当前日期
+        var currentDate = new Date();
+
+        // 计算相差的时间（以毫秒为单位）
+        var timeDifference = currentDate - startDate;
+
+        // 将毫秒转换为天数
+        var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+        // 显示相差的天数
+        document.getElementById("countdown").innerHTML = "今天是我们认识的第 " + daysDifference + " 天";
+
+        // 调用函数以添加图片和相关信息
+        addImage("保家卫国", "./img/孙健.jpg", "保家卫国血性男儿（全身军装未过审无法上传，截图到这个程度才能发）");
+        addImage("婚宴", "./img/宴席.jpg", "这是吃的谁的婚宴我忘了");
+        addImage("婚宴", "./img/宴席2.jpg", "这是吃的谁的婚宴我忘了");
+        addImage("国庆节", "./img/国庆节.jpg", "这是哪一年呢，记不清了");
+        addImage("国庆节", "./img/国庆节2.jpg", "这是哪一年呢，记不清了");
+        addImage("国庆节", "./img/国庆节3.jpg", "这是哪一年呢，记不清了");
+        addImage("小朋友", "./img/盼盼.jpg", "自称是‘刘铁锤’的小朋友");
+
+
+
+
+        // 可以继续调用 addImage 函数来添加更多图片和信息
+
+
+        // 调用函数以添加视频和相关信息
+       
+        // addVideo("旧梦重温", "./img/8.mov", "聚会");
+    </script>
+</body>
+
+</html>

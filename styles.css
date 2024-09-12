@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.head {
+    width: 1000px;
+    height: 150px;
+    background-color: #666;
+
+
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 32px;
+    vertical-align: center;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
